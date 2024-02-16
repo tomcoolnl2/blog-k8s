@@ -1,0 +1,38 @@
+version: "3.9"
+
+services:
+  client:
+    container_name: client
+    build: ./client/
+    ports:
+      - 3000:3000
+
+  posts:
+    container_name: posts
+    build: ./posts/
+    ports:
+      - 4000:4000
+
+  comments:
+    container_name: comments
+    build: ./comments/
+    ports:
+      - 4001:4001
+
+  query:
+    container_name: query
+    build: ./query/
+    ports:
+      - 4002:4002
+
+  moderation:
+    container_name: moderation
+    build: ./moderation/
+    ports:
+      - 4003:4003
+
+  event-bus:
+    container_name: event-bus
+    build: ./event-bus/
+    ports:
+      - 4005:4005
