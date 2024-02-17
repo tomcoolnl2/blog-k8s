@@ -12,9 +12,12 @@
     "react-scripts": "5.0.1",
     "web-vitals": "2.1.4"
   },
+  "devDependencies": {
+    "env-cmd": "10.1.0"
+  },
   "scripts": {
     "start": "../node_modules/.bin/env-cmd -f ../.env.local react-scripts start",
-    "start:docker": "../node_modules/.bin/env-cmd -f ../.env.docker react-scripts start",
+    "start:docker": "./node_modules/.bin/env-cmd -f .env.docker react-scripts start",
     "build": "GENERATE_SOURCEMAP=false env-cmd ../.env.local react-scripts build",
     "test": "env-cmd ../.env.local react-scripts test",
     "eject": "react-scripts eject"
