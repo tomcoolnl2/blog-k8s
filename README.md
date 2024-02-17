@@ -7,6 +7,11 @@ This project aims to learn about Docker, docker-compose and Kubernetes.
 
 ![Services](docs/server.png)
 
+## local development
+
+Run `npm run start:client` to spin up the Frontend.
+Run `npm run start:servers` to spin up all Backend services simultaniously.
+
 ## docker-compose
 
 Run `make start` to create local Docker images.

@@ -8,4 +8,4 @@ COPY . .
 EXPOSE 3000
 
 FROM base AS start
-CMD ["npm", "start"]
+CMD ["npm", "start:docker"]
