@@ -2,12 +2,9 @@
 DIRECTORIES = ./client/ ./comments/ ./event-bus/ ./moderation/ ./posts/ ./query/
 
 copy-lock:
-	cp ./package-lock.json ./client/
-	cp ./package-lock.json ./comments/
-	cp ./package-lock.json ./event-bus/
-	cp ./package-lock.json ./moderation/
-	cp ./package-lock.json ./posts/
-	cp ./package-lock.json ./query/
+	for dir in $(DIRECTORIES); do \
+    cp ./package-lock.json $$dir; \
+  done \
 
 clean:
   for dir in $(DIRECTORIES); do \
