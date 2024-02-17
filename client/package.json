@@ -17,7 +17,7 @@
   },
   "scripts": {
     "start": "../node_modules/.bin/env-cmd -f ../.env.local react-scripts start",
-    "start:docker": "./node_modules/.bin/env-cmd -f .env.docker react-scripts start",
+    "start:docker": "./node_modules/.bin/env-cmd -f .env.local react-scripts start",
     "build": "GENERATE_SOURCEMAP=false env-cmd ../.env.local react-scripts build",
     "test": "env-cmd ../.env.local react-scripts test",
     "eject": "react-scripts eject"
