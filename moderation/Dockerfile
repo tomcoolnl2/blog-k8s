@@ -5,5 +5,7 @@ COPY package*.json ./
 RUN npm install
 COPY . .
 
+EXPOSE 4003
+
 FROM base AS start
 CMD ["npm", "start"]
