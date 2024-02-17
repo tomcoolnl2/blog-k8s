@@ -1,3 +1,6 @@
+# 
+DIRECTORIES = ./client/ ./comments/ ./event-bus/ ./moderation/ ./posts/ ./query/
+
 copy-lock:
 	cp ./package-lock.json ./client/
 	cp ./package-lock.json ./comments/
@@ -16,3 +19,7 @@ start:
 	$(MAKE) copy-lock
 	docker compose -f docker-compose.yml up -d --build
 	$(MAKE) clean
+
+stop:
+	$(MAKE) clean
+	docker compose down
