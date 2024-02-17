@@ -12,10 +12,14 @@
     "react-scripts": "5.0.1",
     "web-vitals": "2.1.4"
   },
+  "devDependencies": {
+    "env-cmd": "10.1.0"
+  },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
+    "start": "../node_modules/.bin/env-cmd -f ../.env.local react-scripts start",
+    "start:docker": "./node_modules/.bin/env-cmd -f .env.local react-scripts start",
+    "build": "GENERATE_SOURCEMAP=false env-cmd ../.env.local react-scripts build",
+    "test": "env-cmd ../.env.local react-scripts test",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
@@ -23,7 +27,7 @@
       "react-app",
       "react-app/jest"
     ]
-  },
+  }, 
   "browserslist": {
     "production": [
       ">0.2%",

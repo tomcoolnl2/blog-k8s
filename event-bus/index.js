@@ -1,3 +1,4 @@
+
 const express = require("express");
 const bodyParser = require("body-parser");
 const axios = require("axios");
@@ -13,22 +14,22 @@ app.post("/events", (req, res) => {
   events.push(event);
 
   // posts
-  axios.post("http://localhost:4000/events", event).catch((err) => {
+  axios.post(`${process.env.REACT_APP_POSTS_URL}/events`, event).catch((err) => {
     console.log(err.message);
   });
 
   // comments
-  axios.post("http://localhost:4001/events", event).catch((err) => {
+  axios.post(`${process.env.REACT_APP_COMMENTS_URL}/events`, event).catch((err) => {
     console.log(err.message);
   });
 
   // query
-  axios.post("http://localhost:4002/events", event).catch((err) => {
+  axios.post(`${process.env.REACT_APP_QUERY_URL}/events`, event).catch((err) => {
     console.log(err.message);
   });
 
   // moderation
-  axios.post("http://localhost:4003/events", event).catch((err) => {
+  axios.post(`${process.env.REACT_APP_MODERATION_URL}/events`, event).catch((err) => {
     console.log(err.message);
   });
   res.send({ status: "OK" });

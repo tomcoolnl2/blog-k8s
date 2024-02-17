@@ -1,3 +1,4 @@
+
 const express = require("express");
 const bodyParser = require("body-parser");
 const { randomBytes } = require("crypto");
@@ -24,7 +25,7 @@ app.post("/posts/:id/comments", async (req, res) => {
 
   commentsByPostId[req.params.id] = comments;
 
-  await axios.post("http://localhost:4005/events", {
+  await axios.post(`${process.env.REACT_APP_EVENT_BUS_URL}/events`, {
     type: "CommentCreated",
     data: {
       id: commentId,
@@ -51,7 +52,7 @@ app.post("/events", async (req, res) => {
     });
     comment.status = status;
 
-    await axios.post("http://localhost:4005/events", {
+    await axios.post(`${process.env.REACT_APP_EVENT_BUS_URL}/events`, {
       type: "CommentUpdated",
       data: {
         id,

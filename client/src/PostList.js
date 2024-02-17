@@ -5,9 +5,9 @@ import CommentList from "./CommentList";
 
 const PostList = () => {
   const [posts, setPosts] = useState({});
-
+  console.log(process.env)
   const fetchPosts = async () => {
-    const res = await axios.get("http://localhost:4002/posts");
+    const res = await axios.get(`${process.env.REACT_APP_QUERY_URL}/posts`);
 
     setPosts(res.data);
   };
@@ -18,7 +18,7 @@ const PostList = () => {
 
   const renderedPosts = Object.values(posts).map((post) => {
     return (
-      <div
+      <div  
         className="card"
         style={{ width: "30%", marginBottom: "20px" }}
         key={post.id}
