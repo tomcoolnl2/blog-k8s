@@ -1,5 +1,7 @@
 # blog-k8s
 
+Project Management uses Github Issues in the same Repo.
+
 This project is a monorepo, organized using NPM Workspaces.
 The frontend is a simple React App, build with CRA, and runs on port 3000.
 This project serves as a playground, the frontend is far from effective. If a user e.g. want to add a BlogPost or Comment, a user has to refresh the page. 
