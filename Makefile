@@ -18,14 +18,12 @@ clean:
 
 docker-build-all:
 	$(MAKE) copy;
-	docker build -t $(DOCKER_ID_USER)/client -f $(DOCKERFILE) .;
 	for service in $(SERVICES); do \
 		docker build -t $(DOCKER_ID_USER)/$$service -f $(DOCKERFILE) .; \
 	done;
 	$(MAKE) clean;
 
 docker-push-all:
-	docker push $(DOCKER_ID_USER)/client;
 	for service in $(SERVICES); do \
 		docker push $(DOCKER_ID_USER)/$$service; \
 	done;
